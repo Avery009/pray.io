@@ -5,7 +5,7 @@ from crispy_forms.layout import Submit
 
 class PrayerRequestForm(forms.Form):
 	prayerCategories = [
-		('thanks','Thanksgviing'),
+		('thanks','Thanksgiving'),
 		('healing','Healing'),
 		('trauma','Trauma'),
 		('conversion','Conversion'),

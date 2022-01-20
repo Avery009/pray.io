@@ -1,0 +1,10 @@
+<h1>Prayer Board</h1>
+
+{% if prayer_list %}
+<ul>
+{% for prayer in prayer_list %}
+<li><h3><a href='127.0.0.1/requests/{{ prayer.id }}'>{{ prayer.description }}</a></h3></li>
+{% endfor %}
+</ul>
+
+{% endif %}
