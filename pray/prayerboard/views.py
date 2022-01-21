@@ -1,5 +1,7 @@
 from django.shortcuts import render
-
+from django.http import HttpResponse, Http404
+from .models import Prayer
+from django.template import loader
 # Create your views here.
 def latest(request):
 	#Retrieve top 20 latest prayers -- modify retrieval 

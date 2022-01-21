@@ -19,3 +19,7 @@ def viewprayerrequests(request):
 def prayerrequestinput(request):
 	form = forms.PrayerRequestForm()
 	return render(request, 'prayerrequestinputform.html',{'form': form})
+
+def prayerrequestedit(request):
+	form = forms.PrayerRequestEditForm()
+	return render(request, 'prayerrequesteditform.html',{'form': form})
