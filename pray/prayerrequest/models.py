@@ -4,7 +4,7 @@ from django.db import models
 
 class Prayer(models.Model):
 	prayerCategories = [
-                ('thanks','Thanksgviing'),
+                ('thanks','Thanksgiving'),
                 ('healing','Healing'),
                 ('trauma','Trauma'),
                 ('conversion','Conversion'),
@@ -27,4 +27,4 @@ class Prayer(models.Model):
 	prayer_image = models.ImageField(upload_to='prayer_images/%Y/%m/%d',blank=True,null=True)
 	prayer_answered_image = models.ImageField(upload_to='answered_prayer_images/%Y/%m/%d',blank=True,null=True)
 	def __str__(self):
-		return self.prayer_id
+		return str(self.prayer_id)

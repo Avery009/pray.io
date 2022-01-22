@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 class Prayer(models.Model):
 	prayerCategories = [
-                ('thanks','Thanksgviing'),
+                ('thanks','Thanksgiving'),
                 ('healing','Healing'),
                 ('trauma','Trauma'),
                 ('conversion','Conversion'),
