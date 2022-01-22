@@ -11,6 +11,7 @@ def viewprayerrequests(request):
 	user_current_prayer_list = Prayer.objects.all()
 	user_answered_prayer_list = Prayer.objects.all()
 	template = loader.get_template('viewprayerrequests.html')
+	print(user_current_prayer_list)
 	context = {
 		'prayer_list' : user_current_prayer_list,
 		'answered_prayer_list': user_answered_prayer_list
@@ -58,7 +59,7 @@ def prayerrequestinput(request):
 			template = loader.get_template('error.html')
 			return HttpResponse(template.render(context,request))
 
-def prayerrequestedit(request):
+def prayerrequestedit(request,prayer_id):
 	if request.method == 'GET':
 		form = forms.PrayerRequestEditForm()
 		return render(request, 'prayerrequestform.html',{'form': form})
