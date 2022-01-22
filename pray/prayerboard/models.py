@@ -20,7 +20,7 @@ class Prayer(models.Model):
 	prayer_description = models.CharField(max_length=1000)
 	prayer_recipients = models.CharField(max_length=100,blank=True,null=True)
 	prayer_recipients_email = models.EmailField(max_length=100,blank=True,null=True)
-	prayer_categories = models.CharField(choices=prayerCategories,max_length=100,blank=False,default=prayerCategoriesDefault)
+	#prayer_categories = models.ManyToManyField(choices=prayerCategories,max_length=100,blank=False,default=prayerCategoriesDefault)
 	prayer_answered = models.BooleanField(editable=True)
 	prayer_updates = models.CharField(max_length=1400,blank=True,null=True)
 	prayer_image = models.ImageField(upload_to='prayer_images/%Y/%m/%d',blank=True,null=True)

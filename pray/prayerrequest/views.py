@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpResponse, Http404
 from .models import Prayer
 from .forms import forms
@@ -35,19 +35,21 @@ def prayerrequestinput(request):
 		#prayer_answered_image = request.POST['prayer_answered_image']
 		#validate each field in some way to account for SQL injection, etc.
 		form = forms.PrayerRequestForm(request.POST)
+		print(request.POST)
+		print(form.errors)
 		if form.is_valid():
 			#prayer = form.save(commit=False)
-			prayer.prayer_request_date = request.prayer_request_date
-			prayer.prayer_answer_date = request.prayer_answer_date
-			prayer.prayer_description = request.prayer_description
-			prayer.prayer_recipients = request.prayer_recipients
-			prayer.prayer_recipients_email = request.prayer_recipients_email
-			prayer.prayer_categories = request.prayer_categories
-			prayer.prayer_answered = request.prayer_answered
-			prayer.prayer_updates = request.prayer_updates
-			prayer.prayer_image = request.prayer_image
-			prayer.prayer_answered_image = request.prayer_answered_image
-			prayer.save()
+			#prayer.prayer_request_date = request.prayer_request_date
+			#prayer.prayer_answer_date = request.prayer_answer_date
+			#prayer.prayer_description = request.prayer_description
+			#prayer.prayer_recipients = request.prayer_recipients
+			#prayer.prayer_recipients_email = request.prayer_recipients_email
+			#prayer.prayer_categories = request.prayer_categories
+			#prayer.prayer_answered = request.prayer_answered
+			#prayer.prayer_updates = request.prayer_updates
+			#prayer.prayer_image = request.prayer_image
+			#prayer.prayer_answered_image = request.prayer_answered_image
+			form.save()
 			return redirect('/success')
 		else:
 			context = {
@@ -75,17 +77,17 @@ def prayerrequestedit(request):
 		form = forms.PrayerRequestEditForm(request.POST)
 		if form.is_valid():
 			#prayer = form.save(commit=False)
-			prayer.prayer_request_date = request.prayer_request_date
-			prayer.prayer_answer_date = request.prayer_answer_date
-			prayer.prayer_description = request.prayer_description
-			prayer.prayer_recipients = request.prayer_recipients
-			prayer.prayer_recipients_email = request.prayer_recipients_email
-			prayer.prayer_categories = request.prayer_categories
-			prayer.prayer_answered = request.prayer_answered
-			prayer.prayer_updates = request.prayer_updates
-			prayer.prayer_image = request.prayer_image
-			prayer.prayer_answered_image = request.prayer_answered_image
-			prayer.save()
+			prayer_request_date = form.cleaned_data.get('prayer_request_date')
+			prayer_answer_date = form.cleaned_data.get('prayer_answer_date')
+			prayer_description = form.cleaned_data.get('prayer_description')
+			prayer_recipients = form.cleaned_data.get('prayer_recipients')
+			prayer_recipients_email = form.cleaned_data.get('prayer_recipients_email')
+			prayer_categories = form.cleaned_data.get('prayer_categories')
+			prayer_answered = form.cleaned_data.get('prayer_answered')
+			prayer_updates = form.cleaned_data.get('prayer_updates')
+			prayer_image = form.cleaned_data.get('prayer_image')
+			prayer_answered_image = form.cleaned_data.get('prayer_answered_image')
+			#prayer.save()
 			return redirect('/success')
 		else:
 			context = {

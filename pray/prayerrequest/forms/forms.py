@@ -2,8 +2,12 @@ from django import forms
 from django.core.files.uploadedfile import SimpleUploadedFile
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
+from ..models import Prayer
 
-class PrayerRequestForm(forms.Form):
+class PrayerRequestForm(forms.ModelForm):
+	class Meta:
+		model = Prayer
+		fields = '__all__'
 	prayerCategories = [
 		('thanks','Thanksgiving'),
 		('healing','Healing'),
@@ -22,7 +26,7 @@ class PrayerRequestForm(forms.Form):
 	prayer_description = forms.CharField(max_length = 1000, required = True, widget=forms.Textarea)
 	prayer_recipients = forms.CharField(max_length = 100, required = False)
 	prayer_recipients_email = forms.CharField(max_length = 100, required = False)
-	prayer_categories = forms.MultipleChoiceField(required=True,widget=forms.CheckboxSelectMultiple,choices=prayerCategories)
+	#prayer_categories = forms.MultipleChoiceField(required=True,widget=forms.CheckboxSelectMultiple,choices=prayerCategories)
 	prayer_answered = forms.BooleanField(required=False)
 	prayer_updates = forms.CharField(max_length = 1400,required=False,widget=forms.Textarea)
 	prayer_image = forms.ImageField(required=False)
@@ -55,7 +59,7 @@ class PrayerRequestEditForm(forms.Form):
 	prayer_description = forms.CharField(max_length = 1000, required = True, widget=forms.Textarea)
 	prayer_recipients = forms.CharField(max_length = 100, required = False)
 	prayer_recipients_email = forms.CharField(max_length = 100, required = False)
-	prayer_categories = forms.MultipleChoiceField(required=True,widget=forms.CheckboxSelectMultiple,choices=prayerCategories)
+	#prayer_categories = forms.MultipleChoiceField(required=True,widget=forms.CheckboxSelectMultiple,choices=prayerCategories)
 	prayer_answered = forms.BooleanField(required=False)
 	prayer_updates = forms.CharField(max_length = 1400,required=False,widget=forms.Textarea)
 	prayer_image = forms.ImageField(required=False)
