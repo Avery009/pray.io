@@ -25,15 +25,15 @@ class PrayerRequestForm(forms.Form):
 	prayer_categories = forms.MultipleChoiceField(required=True,widget=forms.CheckboxSelectMultiple,choices=prayerCategories)
 	prayer_answered = forms.BooleanField(required=False)
 	prayer_updates = forms.CharField(max_length = 1400,required=False,widget=forms.Textarea)
-	prayer_image = forms.ImageField()
-	prayer_answered_image = forms.ImageField()
+	prayer_image = forms.ImageField(required=False)
+	prayer_answered_image = forms.ImageField(required=False)
 	def __init__(self, *args, **kwargs):
 		super().__init__(*args, **kwargs)
 		self.helper = FormHelper()
 		self.helper.form_id = 'id-PrayerRequestForm'
 		self.helper.form_class = 'blueForms'
 		self.helper.form_method = 'post'
-		self.helper.form_action = 'submit_prayer_request'
+		self.helper.form_action = ''
 		self.helper.add_input(Submit('submit', 'Submit'))
 
 class PrayerRequestEditForm(forms.Form):
@@ -58,13 +58,13 @@ class PrayerRequestEditForm(forms.Form):
 	prayer_categories = forms.MultipleChoiceField(required=True,widget=forms.CheckboxSelectMultiple,choices=prayerCategories)
 	prayer_answered = forms.BooleanField(required=False)
 	prayer_updates = forms.CharField(max_length = 1400,required=False,widget=forms.Textarea)
-	prayer_image = forms.ImageField()
-	prayer_answered_image = forms.ImageField()
+	prayer_image = forms.ImageField(required=False)
+	prayer_answered_image = forms.ImageField(required=False)
 	def __init__(self, *args, **kwargs):
                 super().__init__(*args, **kwargs)
                 self.helper = FormHelper()
                 self.helper.form_id = 'id-PrayerRequestEditForm'
                 self.helper.form_class = 'blueForms'
                 self.helper.form_method = 'post'
-                self.helper.form_action = 'save_prayer_request'
+                self.helper.form_action = ''
                 self.helper.add_input(Submit('save', 'Save'))
