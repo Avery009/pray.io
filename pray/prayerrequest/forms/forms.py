@@ -19,7 +19,7 @@ class PrayerRequestForm(forms.ModelForm):
 		('needs','Needs'),
 		('forgiveness','Forgiveness'),
 	]
-	template_name = 'prayerrequestinput.html'
+	template_name = 'prayerrequestform.html'
 	prayer_id = forms.CharField(label = 'ID', max_length = 100)
 	prayer_request_date = forms.DateTimeField(required=True)
 	prayer_answer_date = forms.DateTimeField(required=False)
@@ -52,7 +52,7 @@ class PrayerRequestEditForm(forms.Form):
                 ('needs','Needs'),
                 ('forgiveness','Forgiveness'),
         ]
-	template_name = 'prayerrequesteditform.html'
+	template_name = 'prayerrequestform.html'
 	prayer_id = forms.CharField(label = 'ID', max_length = 100, disabled=True)
 	prayer_request_date = forms.DateTimeField(required=True, disabled=True)
 	prayer_answer_date = forms.DateTimeField(required=False)

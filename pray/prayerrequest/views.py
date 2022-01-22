@@ -21,7 +21,7 @@ def viewprayerrequests(request):
 def prayerrequestinput(request):
 	if request.method == 'GET':
 		form = forms.PrayerRequestForm()
-		return render(request, 'prayerrequestinputform.html',{'form': form})
+		return render(request, 'prayerrequestform.html',{'form': form})
 	elif request.method == 'POST':
 		#prayer_request_date = request.POST['prayer_request_date']
 		#prayer_answer_date = request.POST['prayer_answer_date']
@@ -61,7 +61,7 @@ def prayerrequestinput(request):
 def prayerrequestedit(request):
 	if request.method == 'GET':
 		form = forms.PrayerRequestEditForm()
-		return render(request, 'prayerrequesteditform.html',{'form': form})
+		return render(request, 'prayerrequestform.html',{'form': form})
 	elif request.method == 'POST':
 		#prayer_request_date = request.POST['prayer_request_date']
 		#prayer_answer_date = request.POST['prayer_answer_date']
