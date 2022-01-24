@@ -4,6 +4,12 @@ from prayerrequest.models import Prayer
 from django.template import loader
 from .forms import forms
 # Create your views here.
+
+def home(request):
+	template = loader.get_template('home.html')
+	context = {}
+	return HttpResponse(template.render(context,request))
+
 def latest(request):
 	#Retrieve top 20 latest prayers -- modify retrieval 
 	latest_prayer_list = Prayer.objects.all()
