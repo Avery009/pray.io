@@ -1,0 +1,21 @@
+<h1>View Requests</h1>
+
+{% if prayer_list %}
+<h2>Current Prayer Requests</h2>
+<ul>
+{% for prayer in prayer_list %}
+<li><h3><a href='edit/{{ prayer.prayer_id }}'>{{ prayer.prayer_description }}</a></h3></li>
+{% endfor %}
+</ul>
+{% endif %}
+
+
+
+{% if answered_prayer_list %}
+<h2>Answered Prayer Requests</h2>
+<ul>
+{% for prayer in answered_prayer_list %}
+<li><h3><a href='edit/{{ prayer.prayer_id }}'>{{ prayer.prayer_description }}</a></h3></li>
+{% endfor %}
+</ul>
+{% endif %}

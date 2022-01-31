@@ -20,7 +20,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+<<<<<<< HEAD
 SECRET_KEY = 'django-insecure-1++*=wy7x6bi8012!760br^*nd32(g)vu%&44p9!1f(mf^3!e#'
+=======
+SECRET_KEY = 'django-insecure-p-6&wwc+lw6&b5wz6_%mq@err3w@f1vo&c=kj@=*otl(nh@e=i'
+>>>>>>> 1111
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -31,7 +35,13 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+<<<<<<< HEAD
     'prayerrequests.apps.PrayerrequestsConfig',
+=======
+    'prayerrequest',
+    'prayerboard',
+    'crispy_forms',
+>>>>>>> 1111
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -55,7 +65,11 @@ ROOT_URLCONF = 'pray.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+<<<<<<< HEAD
         'DIRS': [],
+=======
+        'DIRS': ['templates/'],
+>>>>>>> 1111
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -106,7 +120,11 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
+<<<<<<< HEAD
 TIME_ZONE = 'EST'
+=======
+TIME_ZONE = 'UTC'
+>>>>>>> 1111
 
 USE_I18N = True
 
@@ -124,3 +142,9 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+<<<<<<< HEAD
+=======
+
+# Media Location
+MEDIA_ROOT = '/Users/jamesaveryking/Desktop/PRA/v1/pray/images/'
+>>>>>>> 1111

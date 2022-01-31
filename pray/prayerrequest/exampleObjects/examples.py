@@ -1,0 +1,5 @@
+p0 = Prayer(prayer_id='0',prayer_request_date=timezone.now(),prayer_answer_date=None,prayer_description='I pray that this website gets completed',prayer_recipients=None,prayer_recipients_email=None,prayer_categories=[('strength','Strength')],prayer_answered=False,prayer_updates='Currently working on the website prototype and it\'s going well',prayer_image=None,prayer_answered_image=None)
+
+p1 = Prayer(prayer_id='1',prayer_request_date=timezone.now(),prayer_answer_date=None,prayer_description='I pray that this website helps people',prayer_recipients=None,prayer_recipients_email=None,prayer_categories=[('strength','Strength')],prayer_answered=False,prayer_updates='Currently working on the website prototype and it\'s going well',prayer_image=None,prayer_answered_image=None)
+
+p2 = Prayer(prayer_id='2',prayer_request_date=timezone.now(),prayer_answer_date=None,prayer_description='I pray to work efficiently on this website',prayer_recipients=None,prayer_recipients_email=None,prayer_categories=[('strength','Strength')],prayer_answered=False,prayer_updates='Currently working on the website prototype and it\'s going well',prayer_image=None,prayer_answered_image=None)
