@@ -45,7 +45,7 @@ def individual(request,prayer_id):
 		try:
 			prayer = Prayer.objects.get(pk=prayer_id)
 			form = forms.PrayerRequestViewForm
-			template = loader.get_template('prayerrequestform.html')
+			template = loader.get_template('viewprayerrequest.html')
 			context = {
 				'prayer' : prayer
 			}
