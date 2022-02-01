@@ -1,8 +1,6 @@
 from django.shortcuts import render
-<<<<<<< HEAD
 
 # Create your views here.
-=======
 from django.http import HttpResponse, Http404
 from prayerrequest.models import Prayer
 from django.template import loader
@@ -62,4 +60,3 @@ def individual(request,prayer_id):
 		return HttpResponse(template.render(context,request))
 		
 		
->>>>>>> 1111

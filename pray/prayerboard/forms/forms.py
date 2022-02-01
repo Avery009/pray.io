@@ -1,7 +1,5 @@
 from django import forms
 from django.core.files.uploadedfile import SimpleUploadedFile
-from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Submit
 from ..models import Prayer
 
 
@@ -22,15 +20,3 @@ class PrayerRequestViewForm(forms.ModelForm):
 	prayer_image = forms.ImageField(required=False,disabled=True)
 	prayer_answered_image = forms.ImageField(required=False,disabled=True)
 	prayer_count = forms.IntegerField(disabled=True,widget=forms.NumberInput)
-	def __init__(self, *args, **kwargs):
-		super().__init__(*args, **kwargs)
-		self.helper = FormHelper()
-		self.helper.form_id = 'id-PrayerRequestViewForm'
-		self.helper.form_class = 'blueForms'
-		self.helper.form_method = 'get'
-		self.helper.form_action = '' #url format to view individual requests (requests/{prayer_id})
-		self.helper.layout = Layout(
-			FormActions(
-				Submit('pray',css_class='btn-success')
-			)
-		)

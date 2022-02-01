@@ -1,8 +1,6 @@
 from django.db import models
 
 # Create your models here.
-<<<<<<< HEAD
-=======
 class Prayer(models.Model):
 	prayerCategories = [
                 ('thanks','Thanksgiving'),
@@ -30,4 +28,3 @@ class Prayer(models.Model):
 	prayer_count = models.IntegerField('prayer count',blank=False,editable=False)
 	def __str__(self):
 		return self.prayer_id
->>>>>>> 1111
