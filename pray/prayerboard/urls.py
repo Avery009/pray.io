@@ -8,4 +8,5 @@ urlpatterns = [
 	path('prayedfor/', views.mostprayedfor, name='Most Prayed For'),
 	path('answered/', views.recentlyanswered, name='Answered Prayers'),
 	path('<int:prayer_id>/', views.individual, name='Pray'),
+	path('requests/praysuccess', views.praysuccess, name='Successful Prayer'),
 ]

@@ -49,6 +49,7 @@ def individual(request,prayer_id):
 			context = {
 				'prayer' : prayer
 			}
+			print(str(prayer))
 			return HttpResponse(template.render(context,request))
 		except Prayer.DoesNotExist:
 			raise Http404("Prayer ID is not in database")
@@ -59,4 +60,7 @@ def individual(request,prayer_id):
 		template = loader.get_template('error.html')
 		return HttpResponse(template.render(context,request))
 		
-		
+def praysuccess(request):
+	template = loader.get_template('praysuccess.html')
+	context = {}
+	return HttpResponse(template.render(context,request))		

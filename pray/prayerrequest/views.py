@@ -51,7 +51,7 @@ def prayerrequestinput(request):
 			#prayer.prayer_image = request.prayer_image
 			#prayer.prayer_answered_image = request.prayer_answered_image
 			form.save()
-			return redirect('/success')
+			return redirect('/requests/success')
 		else:
 			context = {
 				'error' : 501

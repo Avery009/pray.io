@@ -8,14 +8,14 @@
 {% bootstrap_messages %}
 
 {# Display a form #}
-<form action="/request/new/" method="post" class="form">
+<form action="/requests/praysuccess" method="get" class="form">
   {% csrf_token %}
   {% for field in form %}
 	{% bootstrap_field field %}
   {% endfor %}
   {% buttons %}
-    <button type="submit" class="btn btn-primary">
-      Submit
+    <button type="submit" class="btn btn-success">
+      Pray
     </button>
   {% endbuttons %}
 </form>
