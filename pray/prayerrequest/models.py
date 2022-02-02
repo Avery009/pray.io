@@ -26,6 +26,6 @@ class Prayer(models.Model):
 	prayer_updates = models.CharField(max_length=1400,blank=True,null=True)
 	prayer_image = models.ImageField(upload_to='prayer_images/%Y/%m/%d',blank=True,null=True)
 	prayer_answered_image = models.ImageField(upload_to='answered_prayer_images/%Y/%m/%d',blank=True,null=True)
-	prayer_count = models.IntegerField(editable=False,null=True)
+	prayer_count = models.IntegerField(editable=False,null=False)
 	def __str__(self):
 		return str(self.prayer_id)
