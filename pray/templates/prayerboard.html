@@ -10,12 +10,11 @@
 </div>
 
 {% if prayer_list %}
-<ul>
 {% for prayer in prayer_list %}
-<li><h3><a href='/{{ prayer.prayer_id }}'>{{ prayer.prayer_description }}</a>{{ prayer.prayer_count }}</h3></li>
+<div class="alert alert-secondary">
+<h3><span class="badge badge-success">{{ prayer.prayer_count }}</span>	<a href='/{{ prayer.prayer_id }}'>{{ prayer.prayer_description }}</a><button align="right" type="button" class="btn btn-success float-right">Pray</button></h3>
+</div>
 {% endfor %}
-</ul>
-
 {% endif %}
 {% endblock %}
 </body>
