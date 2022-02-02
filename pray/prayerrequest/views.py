@@ -88,8 +88,8 @@ def prayerrequestedit(request,prayer_id):
 			prayer_updates = form.cleaned_data.get('prayer_updates')
 			prayer_image = form.cleaned_data.get('prayer_image')
 			prayer_answered_image = form.cleaned_data.get('prayer_answered_image')
-			#prayer.save()
-			return redirect('/success')
+			form.save()
+			return redirect('/requests/success')
 		else:
 			context = {
 				'error' : 501
