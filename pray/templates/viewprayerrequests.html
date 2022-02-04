@@ -6,13 +6,16 @@
 <body>
 {% block content %}
 <div class="jumbotron text-center">
+<a href='new' align="right" class="btn btn-success btn-block">New Prayer Request</a>
+</div>
+<div class="jumbotron text-center">
 <h1>Active Prayer List</h1>
 </div>
 
 {% if prayer_list %}
 {% for prayer in prayer_list %}
 <div class="alert alert-secondary">
-<h3><span class="badge badge-success">	{{ prayer.prayer_count }}</span>{{ prayer.prayer_description }}<a <a href='edit/{{ prayer.prayer_id }}' align="right" class="btn btn-primary float-right">Edit</a></h3>
+<h3><span class="badge badge-success">	{{ prayer.prayer_count }}</span>{{ prayer.prayer_description }}<a href='edit/{{ prayer.prayer_id }}' align="right" class="btn btn-primary float-right">Edit</a></h3>
 </div>
 {% endfor %}
 {% endif %}
